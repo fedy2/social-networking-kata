@@ -1,4 +1,4 @@
-##Social Networking Kata
+# Social Networking Kata
 
 A solution to the social networking kata.
 
