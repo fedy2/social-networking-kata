@@ -4,6 +4,7 @@
 package com.github.fedy2.snk.user;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -29,7 +30,7 @@ public class User {
 	}
 
 	public List<Message> getMessages() {
-		return messages;
+		return Collections.unmodifiableList(messages);
 	}
 
 	public void postMessage(Message message) {
@@ -38,6 +39,10 @@ public class User {
 	
 	public void addFriend(User friend) {
 		friends.add(friend);
+	}
+	
+	public Set<User> getFriends() {
+		return Collections.unmodifiableSet(friends);
 	}
 
 	public List<Message> getWall() {
