@@ -5,7 +5,7 @@ package com.github.fedy2.snk.command;
 
 import java.time.ZonedDateTime;
 
-import com.github.fedy2.snk.console.UserConsole;
+import com.github.fedy2.snk.console.Console;
 import com.github.fedy2.snk.user.Message;
 import com.github.fedy2.snk.user.User;
 
@@ -32,7 +32,7 @@ public class PostCommand implements Command {
 	}
 
 	@Override
-	public void execute(UserConsole console) {
+	public void execute(Console console) {
 		Message message = new Message(author, ZonedDateTime.now(), text);
 		author.postMessage(message);
 	}

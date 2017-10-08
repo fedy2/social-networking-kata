@@ -3,7 +3,7 @@
  */
 package com.github.fedy2.snk.command;
 
-import com.github.fedy2.snk.console.UserConsole;
+import com.github.fedy2.snk.console.Console;
 
 /**
  * @author "Federico De Faveri defaveri@gmail.com"
@@ -12,8 +12,8 @@ import com.github.fedy2.snk.console.UserConsole;
 public interface Command {
 
 	/**
-	 * Executes the command using the passed {@link UserConsole}.
+	 * Executes the command using the passed {@link Console}.
 	 * @param console
 	 */
-	void execute(UserConsole console);
+	void execute(Console console);
 }

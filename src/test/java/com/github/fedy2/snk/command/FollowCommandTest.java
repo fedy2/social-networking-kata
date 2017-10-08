@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.github.fedy2.snk.console.UserConsole;
+import com.github.fedy2.snk.console.Console;
 import com.github.fedy2.snk.user.User;
 
 /**
@@ -21,7 +21,7 @@ public class FollowCommandTest {
 	private FollowCommand command;
 	private User user;
 	private User friend;
-	private UserConsole console;
+	private Console console;
 	
 	@Before
 	public void setup() {
@@ -30,7 +30,7 @@ public class FollowCommandTest {
 		
 		command = new FollowCommand(user, friend);
 		
-		console = mock(UserConsole.class);
+		console = mock(Console.class);
 	}
 	
 	@Test

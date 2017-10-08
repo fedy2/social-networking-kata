@@ -11,7 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.github.fedy2.snk.console.UserConsole;
+import com.github.fedy2.snk.console.Console;
 import com.github.fedy2.snk.user.Message;
 import com.github.fedy2.snk.user.User;
 
@@ -24,7 +24,7 @@ public class ReadCommandTest {
 	
 	private ReadCommand command;
 	private User user;
-	private UserConsole console;
+	private Console console;
 
 	@Before
 	public void setUp() throws Exception {
@@ -32,7 +32,7 @@ public class ReadCommandTest {
 		
 		command = new ReadCommand(user);
 		
-		console = mock(UserConsole.class);
+		console = mock(Console.class);
 	}
 
 	@Test

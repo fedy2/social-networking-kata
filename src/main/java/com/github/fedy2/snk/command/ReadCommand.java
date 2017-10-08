@@ -3,7 +3,7 @@
  */
 package com.github.fedy2.snk.command;
 
-import com.github.fedy2.snk.console.UserConsole;
+import com.github.fedy2.snk.console.Console;
 import com.github.fedy2.snk.user.Message;
 import com.github.fedy2.snk.user.User;
 
@@ -24,7 +24,7 @@ public class ReadCommand implements Command {
 	}
 
 	@Override
-	public void execute(UserConsole console) {
+	public void execute(Console console) {
 		for (Message message : user.getMessages()) {
 			console.write(message);
 		}

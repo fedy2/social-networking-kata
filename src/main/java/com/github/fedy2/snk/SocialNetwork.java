@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import com.github.fedy2.snk.command.Command;
 import com.github.fedy2.snk.command.parser.CommandParser;
 import com.github.fedy2.snk.command.parser.CommandParserRepository;
-import com.github.fedy2.snk.console.UserConsole;
+import com.github.fedy2.snk.console.Console;
 
 /**
  * @author "Federico De Faveri defaveri@gmail.com"
@@ -22,7 +22,7 @@ import com.github.fedy2.snk.console.UserConsole;
 public class SocialNetwork {
 
 	@Inject
-	private UserConsole console;
+	private Console console;
 
 	@Inject
 	private CommandParserRepository parserRepository;

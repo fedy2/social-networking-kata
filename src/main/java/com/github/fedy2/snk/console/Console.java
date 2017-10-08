@@ -18,14 +18,14 @@ import com.github.fedy2.snk.user.Message;
  *
  */
 @Component
-public class UserConsole {
+public class Console {
 	
 	@Inject
 	private MessageFormatter formatter;
 	
 	private BufferedReader reader;
 	
-	public UserConsole() {
+	public Console() {
 		reader = new BufferedReader(new InputStreamReader(System.in));
 	}
 
