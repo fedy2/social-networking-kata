@@ -3,6 +3,10 @@
  */
 package com.github.fedy2.snk.console;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Component;
@@ -19,11 +23,18 @@ public class UserConsole {
 	@Inject
 	private MessageFormatter formatter;
 	
-	@Inject
-	private ConsoleIO console;
+	private BufferedReader reader;
+	
+	public UserConsole() {
+		reader = new BufferedReader(new InputStreamReader(System.in));
+	}
 
 	public String readCommand() {
-		return console.readLine();
+		try {
+			return reader.readLine();
+		} catch (IOException e) {
+			throw new RuntimeException("Failed reading from the console", e);
+		}
 	}
 	
 	public void write(Message message) {
@@ -32,6 +43,6 @@ public class UserConsole {
 	}
 	
 	public void write(String text) {
-		console.writeLine(text);
+		System.out.println(text);
 	}
 }
