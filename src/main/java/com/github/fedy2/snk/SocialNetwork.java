@@ -7,6 +7,8 @@ import java.util.Optional;
 
 import javax.inject.Inject;
 
+import org.springframework.stereotype.Service;
+
 import com.github.fedy2.snk.command.Command;
 import com.github.fedy2.snk.command.parser.CommandParser;
 import com.github.fedy2.snk.command.parser.CommandParserRepository;
@@ -16,19 +18,16 @@ import com.github.fedy2.snk.console.UserConsole;
  * @author "Federico De Faveri defaveri@gmail.com"
  *
  */
+@Service
 public class SocialNetwork {
 
+	@Inject
 	private UserConsole console;
 
+	@Inject
 	private CommandParserRepository parserRepository;
 
-	@Inject
-	public SocialNetwork(UserConsole console, CommandParserRepository parserRepository) {
-		this.console = console;
-		this.parserRepository = parserRepository;
-	}
-
-	public void processUserCommands() {
+	public void start() {
 		String line;
 		while ((line = console.readCommand()) != null) {
 			parseAndExecuteCommand(line);
@@ -45,6 +44,5 @@ public class SocialNetwork {
 		} else {
 			console.write("Unknown command: " + line);
 		}
-
 	}
 }

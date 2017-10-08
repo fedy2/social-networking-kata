@@ -13,6 +13,7 @@ import com.github.fedy2.snk.user.User;
  * @author "Federico De Faveri defaveri@gmail.com"
  *
  */
+
 public class WallCommand implements Command {
 	
 	private User user;

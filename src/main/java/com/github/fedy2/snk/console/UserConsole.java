@@ -5,23 +5,22 @@ package com.github.fedy2.snk.console;
 
 import javax.inject.Inject;
 
+import org.springframework.stereotype.Component;
+
 import com.github.fedy2.snk.user.Message;
 
 /**
  * @author "Federico De Faveri defaveri@gmail.com"
  *
  */
+@Component
 public class UserConsole {
 	
+	@Inject
 	private MessageFormatter formatter;
 	
-	private ConsoleIO console;
-	
 	@Inject
-	public UserConsole(MessageFormatter formatter, ConsoleIO console) {
-		this.formatter = formatter;
-		this.console = console;
-	}
+	private ConsoleIO console;
 
 	public String readCommand() {
 		return console.readLine();

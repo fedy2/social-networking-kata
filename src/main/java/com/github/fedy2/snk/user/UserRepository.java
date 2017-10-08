@@ -6,21 +6,19 @@ package com.github.fedy2.snk.user;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
+import org.springframework.stereotype.Service;
 
 /**
  * @author "Federico De Faveri defaveri@gmail.com"
  *
  */
-@Singleton
+@Service
 public class UserRepository {
 	
 	private Map<String, User> users;
 	
-	@Inject
 	public UserRepository() {
-		users = new HashMap<>();
+		users = new HashMap<String, User>();
 	}
 	
 	public void add(User user) {

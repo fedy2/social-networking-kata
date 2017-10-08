@@ -3,19 +3,17 @@
  */
 package com.github.fedy2.snk.console;
 
-import javax.inject.Singleton;
-
-import dagger.Module;
-import dagger.Provides;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * @author "Federico De Faveri defaveri@gmail.com"
  *
  */
-@Module
+@Configuration
 public class ConsoleIOProvider {
 
-	@Provides @Singleton
+	@Bean
 	public ConsoleIO provideConsoleIO() {
 		return new CLConsoleIO();
 	}

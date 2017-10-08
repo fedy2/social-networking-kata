@@ -6,8 +6,7 @@ package com.github.fedy2.snk.console;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
+import org.springframework.stereotype.Component;
 
 import com.github.fedy2.snk.user.Message;
 import com.github.fedy2.snk.user.User;
@@ -16,12 +15,8 @@ import com.github.fedy2.snk.user.User;
  * @author "Federico De Faveri defaveri@gmail.com"
  *
  */
-@Singleton
+@Component
 public class MessageFormatter {
-	
-	@Inject
-	public MessageFormatter() {
-	}
 	
 	public String format(Message message) {
 		StringBuilder line = new StringBuilder();
